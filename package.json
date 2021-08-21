@@ -1,0 +1,33 @@
+{
+  "name": "NodeProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Talha Ghias",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "aws-sdk": "^2.918.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-validation": "^3.0.6",
+    "express-validator": "^6.9.0",
+    "i": "^0.3.6",
+    "joi": "^17.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "mongoose": "^5.9.13",
+    "nodemon": "^2.0.7",
+    "npm": "^6.14.5",
+    "randomstring": "^1.2.1",
+    "twilio": "^3.43.0",
+    "uuid": "^8.3.1"
+  }
+}
