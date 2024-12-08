@@ -20,6 +20,7 @@ require('dotenv').config()
 */
 
 require('./config/mongoose.config')();
+require('./config/type-orm.config')();
 
 /*
 *
