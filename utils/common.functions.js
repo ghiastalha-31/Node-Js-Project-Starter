@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const AWS = require('aws-sdk/index');
+require('aws-sdk/lib/maintenance_mode_message').suppress = true;
 const randomString = require('randomstring');
 const s3 = new AWS.S3({
     accessKeyId: process.env.aws_access_key,

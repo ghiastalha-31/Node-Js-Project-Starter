@@ -1,20 +1,26 @@
 const mongoose = require('mongoose');
 
-module.exports = async () => {
+const connectToDatabase = async () => {
     try {
-        const url = `mongodb://localhost:27017/db-name`;
-        const dbConnection = await mongoose.connect(url, {
-            useNewUrlParser: true.valueOf,
-            useUnifiedTopology: true,
-            useCreateIndex: true
-        });
-        if(dbConnection)
-        {
-            console.info('connected to db: DATABASE NAME')
-        }else{
-            console.warn('disconnected the database')
-        }
+        // Use environment variables for flexibility and security
+        const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/node-starter';
+
+        // Set recommended Mongoose options
+        const options = {
+            
+        };
+
+        const dbConnection = await mongoose.connect(dbUrl, options);
+
+        // Log connection details
+        console.info(`Connected to database: ${dbConnection.connection.name} at ${dbConnection.connection.host}`);
     } catch (error) {
-        throw new Error(error);
+        // Handle errors with meaningful messages
+        console.error('Failed to connect to the database:', error.message);
+
+        // Optionally rethrow the error if needed
+        throw error;
     }
-}
+};
+
+module.exports = connectToDatabase;
